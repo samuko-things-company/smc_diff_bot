@@ -1,8 +1,6 @@
-# smc_test_bot
-The is a test differntial drive robot designed to help test the **`smc_ros2_hw_plugin`** package. You can use the code in your project as a guide to help setup the ros2 control xacro and launch file for your own differntial drive robot.
-
-### Quick Demo
-![Local Demo Video]()
+> NOTE: This is the `ros-humble` implementation. It contains how the `smc_ros_hw_plugin` is used with a `differntial drive robot`.
+>
+> It also shows how to set up `ros2-control`, `ros2-controllers` and the `controller-manager` to work with the smc driver module (check the `config` and `launch` folder).  
 
 ## How to quickly setup the `smc driver module` with the `smc_test_bot` using the `smc_ros2_hw_plugin` pkg
 - ensure the **`smc_l298n_pid_driver`** module (with the motors connected and fully set up for velocity PID) is connected to the microcomputer or PC via USB.
