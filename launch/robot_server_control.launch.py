@@ -11,7 +11,7 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     # delare any path variable
-    my_pkg_path = get_package_share_directory('smc_test_bot')  
+    my_pkg_path = get_package_share_directory('smc_diff_bot')  
   
     # create needed nodes or launch files
     rsp = IncludeLaunchDescription(

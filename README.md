@@ -1,20 +1,20 @@
-> NOTE: This is the `ros-humble` implementation. It contains how the `smc_ros_hw_plugin` is used with a `differntial drive robot`.
+> NOTE: This is the `ros-humble` implementation. It contains how the `smc_l298n_ros_plugin` is used with a `differntial drive robot`.
 >
-> It also shows how to set up `ros2-control`, `ros2-controllers` and the `controller-manager` to work with the smc driver module (check the `config` and `launch` folder).  
+> It also shows how to set up `ros2-control`, `ros2-controllers` and the `controller-manager` to work with the `smc_l298n_pid_driver module` (check the `config` and `launch` folder).  
 
-## How to quickly setup the `smc driver module` with the `smc_test_bot` using the `smc_ros2_hw_plugin` pkg
+## How to quickly setup the `smc_l298n_pid_driver module` with the `smc_diff_bot` using the `smc_l298n_ros_plugin` pkg
 - ensure the **`smc_l298n_pid_driver`** module (with the motors connected and fully set up for velocity PID) is connected to the microcomputer or PC via USB.
 
-- ensure you have successfullly install and build the [**`smc_ros2_hw_plugin`**](https://github.com/samuko-things-company/smc_ros_hw_plugin/tree/humble) package in your ros workspace and also sourced it.
+- ensure you have successfully installed and built the [**`smc_l298n_ros_plugin`**](https://github.com/samuko-things-company/smc_l298n_ros_plugin/tree/humble) package in your ros workspace and also sourced it.
 
 - In the src/ folder of your ros workspace, clone the repo (or you can download and add it manually to the src/ folder)
   ```shell
-  git clone -b humble https://github.com/samuko-things-company/smc_test_bot.git
+  git clone -b humble https://github.com/samuko-things-company/smc_diff_bot.git
   ```
 
-- cd into the package folder (i.e `smc_test_bot`) and run rosdep to install any necessary ros dependencies
+- cd into the package folder (i.e `smc_diff_bot`) and run rosdep to install any necessary ros dependencies
   ```shell
-  cd smc_test_bot
+  cd smc_diff_bot
   rosdep install --from-paths src --ignore-src -r -y
   ```
 
@@ -35,27 +35,27 @@
 
 - build the packages with colcon (in your ros workspace root folder):
   ```shell
-  colcon build --packages-select smc_test_bot --symlink-install
+  colcon build --packages-select smc_diff_bot --symlink-install
   ```
 
 
-## Test the smc_test_bot (with the smc_driver connected)
+## Test the smc_diff_bot (with the smc_l298n_pid_driver connected)
 - ensure you source your ros workspace in the terminal
 
 - view the robot in rviz with this command
   ```shell
-  ros2 launch smc_test_bot robot_test_view.launch.py
+  ros2 launch smc_diff_bot robot_test_view.launch.py
   ```
 
-- start the smc_test_bot with the smc_ros_hw_plugin (using the controller manager package)
+- start the `smc_diff_bot` with the `smc_l298n_ros_plugin` (using the controller manager package)
   ```shell
-  ros2 launch smc_test_bot robot_server_control.launch.py
+  ros2 launch smc_diff_bot robot_server_control.launch.py
   ```
 
-- while the control server is running, you can view the robot with odometery data by runing the following in a new terminal
+- while the `robot_server_control` is running, you can view the robot with odometery data by runing the following in a new terminal
   ```shell
-  ros2 launch smc_test_bot robot_client_view.launch.py
+  ros2 launch smc_diff_bot robot_client_view.launch.py
   ```
 
-- you can now control the motors via teleop and notice how the robot changes position in rviz (as in the video above)
+- you can now control the motors via a teleop package and notice how the robot changes position in rviz (as in the video above)
 > you can also use my [arrow_key_teleop_package](https://github.com/samuko-things/arrow_key_teleop_drive)

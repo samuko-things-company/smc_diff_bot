@@ -3,7 +3,7 @@
 
 <package format="3">
 
-  <name>smc_test_bot</name>
+  <name>smc_diff_bot</name>
   <version>1.0.0</version>
   <description>TODO: Package description</description>
   <maintainer email="samuel.c.agba@gmail.com">Samuel Obiagba</maintainer>

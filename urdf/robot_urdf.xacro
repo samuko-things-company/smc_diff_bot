@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="smc_test_bot">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="smc_diff_bot">
 
 
     <!-- ################### inertia macros  ############################-->
@@ -254,12 +254,12 @@
 
 
 
-    <!-- ############# add ros2_control => INSERT SMC_ROS_HW_PLUGIN ############### -->
+    <!-- ############# add ros2_control => INSERT SMC_L298N_ROS_PLUGIN ############### -->
 
     <ros2_control name="smc_differential_drive_control" type="system">
 
       <hardware>
-        <plugin>smc_ros_hw_plugin/SMCDriverHardware</plugin>
+        <plugin>smc_l298n_ros_plugin/SMCHardwareDriver</plugin>
         <param name="motorA_wheel_name">left_wheel_joint</param>
         <param name="motorB_wheel_name">right_wheel_joint</param>
         <param name="port">/dev/ttyUSB0</param>

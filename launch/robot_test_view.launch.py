@@ -13,7 +13,7 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     # delare any path variable
-    my_pkg_path = get_package_share_directory('smc_test_bot')
+    my_pkg_path = get_package_share_directory('smc_diff_bot')
     
     rviz_config_file = os.path.join(my_pkg_path,'config','robot_test_view.rviz')
 
