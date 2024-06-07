@@ -1,20 +1,22 @@
 > NOTE: This is the `ros-humble` implementation. It contains how the `smc_l298n_ros_plugin` is used with a `differntial drive robot`.
 >
-> It also shows how to set up `ros2-control`, `ros2-controllers` and the `controller-manager` to work with the `smc_l298n_pid_driver module` (check the `config` and `launch` folder).  
+> It also shows how to set up `ros2-control`, `ros2-controllers`, and the `controller-manager` to work with the `smc_l298n_pid_driver module` (check the `config` and `launch` folder).  
 
 ## How to quickly setup the `smc_l298n_pid_driver module` with the `smc_diff_bot` using the `smc_l298n_ros_plugin` pkg
 - ensure the **`smc_l298n_pid_driver`** module (with the motors connected and fully set up for velocity PID) is connected to the microcomputer or PC via USB.
 
 - ensure you have successfully installed and built the [**`smc_l298n_ros_plugin`**](https://github.com/samuko-things-company/smc_l298n_ros_plugin/tree/humble) package in your ros workspace and also sourced it.
 
-- In the src/ folder of your ros workspace, clone the repo (or you can download and add it manually to the src/ folder)
+- In the `src/` folder of your `ros workspace`, clone the repo
+  (or you can download and add it manually to the `src/` folder)
+  > *NOTE: if you download it, extract it and change the folder name to `smc_diff_bot` before moving it to the `src/` folder*
   ```shell
   git clone -b humble https://github.com/samuko-things-company/smc_diff_bot.git
   ```
 
-- cd into the package folder (i.e `smc_diff_bot`) and run rosdep to install any necessary ros dependencies
+- from the `src/` folder, cd into the root directory of your `ros workspace` and run rosdep to install all necessary ros dependencies
   ```shell
-  cd smc_diff_bot
+  cd ../
   rosdep install --from-paths src --ignore-src -r -y
   ```
 
@@ -31,16 +33,16 @@
   ```
   > you should see /dev/ttyUSB0 or /dev/ttyUSB1 and so on
 
-- once you have gotten the port, update the port parameter in the `ros2_control` tag in the `robot_urdf.xacro` file with the discovered port in the previous step
+- once you have gotten the **port**, update the **port** parameter in the `ros2_control` tag in the `robot_urdf.xacro` file with the discovered port in the previous step
 
-- build the packages with colcon (in your ros workspace root folder):
+- build the packages with colcon (in your `ros workspace` root folder):
   ```shell
   colcon build --packages-select smc_diff_bot --symlink-install
   ```
 
 
 ## Test the smc_diff_bot (with the smc_l298n_pid_driver connected)
-- ensure you source your ros workspace in the terminal
+- ensure you source your `ros workspace` in the terminal
 
 - view the robot in rviz with this command
   ```shell
@@ -59,3 +61,5 @@
 
 - you can now control the motors via a teleop package and notice how the robot changes position in rviz (as in the video above)
 > you can also use my [arrow_key_teleop_package](https://github.com/samuko-things/arrow_key_teleop_drive)
+
+> **feel free to use, copy and edit the smc_diff_drive package codes and launch files in your preferred project**
