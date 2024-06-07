@@ -6,7 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /TF1
         - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 549
@@ -53,12 +52,14 @@ Visualization Manager:
       Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: true
+        All Enabled: false
         base_link:
           Value: true
         castor_wheel:
-          Value: true
+          Value: false
         chassis:
+          Value: false
+        imu:
           Value: true
         left_wheel:
           Value: true
@@ -73,6 +74,8 @@ Visualization Manager:
         base_link:
           chassis:
             castor_wheel:
+              {}
+            imu:
               {}
             left_wheel:
               {}
@@ -112,6 +115,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        imu:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         left_wheel:
           Alpha: 1
           Show Axes: false
@@ -191,10 +198,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.8853963613510132
+      Pitch: 0.34039655327796936
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.0203994512557983
+      Yaw: 0.6154008507728577
     Saved: ~
 Window Geometry:
   Displays:
