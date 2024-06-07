@@ -27,7 +27,7 @@ def generate_launch_description():
             launch_arguments={'use_sim_time': 'false'}.items()
     )
     
-    joint_state_publisher_gui_node = Node(
+    joint_state_publisher_node = Node(
         package='joint_state_publisher',
         executable='joint_state_publisher',
         output='screen'
@@ -48,7 +48,7 @@ def generate_launch_description():
     # Add the nodes to the launch description
     ld.add_action(rsp)
     ld.add_action(rviz_node)
-    ld.add_action(joint_state_publisher_gui_node)
+    ld.add_action(joint_state_publisher_node)
 
     
     return ld      # return (i.e send) the launch description for excecution
