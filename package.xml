@@ -9,10 +9,18 @@
   <maintainer email="samuel.c.agba@gmail.com">Samuel Obiagba</maintainer>
   <license>TODO: License declaration</license>
 
+  <depend>xacro</depend>
+  <depend>ros2_control</depend>
+  <depend>ros2_controllers</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>joint_state_publisher</depend>
+  <depend>libserial-dev</depend>
+  
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
+  
 
   <export>
     <build_type>ament_cmake</build_type>
